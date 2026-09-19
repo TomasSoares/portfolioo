@@ -14,7 +14,7 @@ export default function About() {
       </h2>
       <p className={styles.body} data-reveal="">
         I finished my Computer Science degree at the University of Leiria e Oeste in 2025, after
-        four internships that taught me early what shipping actually costs. Front end is where I'm
+        three internships that taught me early what shipping actually costs. Front end is where I'm
         most at home, from component structure to layout behaviour and the small interaction
         details, but I'm comfortable following a feature back through the API and into the
         database.
