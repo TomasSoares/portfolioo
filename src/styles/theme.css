@@ -1,0 +1,68 @@
+:root {
+  --font-heading: "Geist", system-ui, sans-serif;
+  --font-body: "Geist", system-ui, sans-serif;
+
+  --m-page: #050505;
+  --m-panel: #0d0d0d;
+  --m-card: #111111;
+  --m-raise: #141414;
+  --m-raise2: #181818;
+
+  --m-line: #1c1c1c;
+  --m-line2: #1f1f1f;
+  --m-line3: #232323;
+  --m-line4: #262626;
+  --m-line5: #2e2e2e;
+  --m-line6: #333333;
+  --m-line7: #3a3a3a;
+  --m-line8: #4a4a4a;
+
+  --m-ink: #f2f2f2;
+  --m-ink-strong: #ffffff;
+
+  --m-text: #e4e4e4;
+  --m-text2: #d8d8d8;
+  --m-text3: #d0d0d0;
+  --m-text4: #b4b4b4;
+
+  --m-muted: #9a9a9a;
+  --m-muted2: #8a8a8a;
+  --m-muted3: #7c7c7c;
+  --m-muted4: #6d6d6d;
+  --m-muted5: #5c5c5c;
+
+  --m-pulse: rgba(242, 242, 242, 0.35);
+}
+
+:root[data-theme="light"] {
+  --m-page: #e9e9e9;
+  --m-panel: #f7f7f6;
+  --m-card: #ffffff;
+  --m-raise: #ffffff;
+  --m-raise2: #f0efee;
+
+  --m-line: #e2e1df;
+  --m-line2: #e4e3e1;
+  --m-line3: #dcdbd8;
+  --m-line4: #d2d1ce;
+  --m-line5: #c6c5c1;
+  --m-line6: #bab9b5;
+  --m-line7: #aeada9;
+  --m-line8: #98978f;
+
+  --m-ink: #141413;
+  --m-ink-strong: #000000;
+
+  --m-text: #1d1d1b;
+  --m-text2: #2a2a28;
+  --m-text3: #333331;
+  --m-text4: #4a4a47;
+
+  --m-muted: #5f5f5c;
+  --m-muted2: #6d6d69;
+  --m-muted3: #77776f;
+  --m-muted4: #7f7f78;
+  --m-muted5: #8a8a83;
+
+  --m-pulse: rgba(20, 20, 19, 0.28);
+}

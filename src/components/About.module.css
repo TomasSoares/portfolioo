@@ -1,0 +1,22 @@
+.title {
+  font-size: clamp(24px, 4.2vw, 34px);
+  line-height: 1.2;
+  max-width: 26ch;
+  text-wrap: balance;
+}
+
+.body {
+  margin: 0;
+  max-width: 52ch;
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--m-muted);
+  text-wrap: pretty;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}

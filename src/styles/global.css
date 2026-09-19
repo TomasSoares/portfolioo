@@ -1,0 +1,111 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* `clip`, not `hidden`: `hidden` would break the sticky navbar. */
+body {
+  margin: 0;
+  overflow-x: clip;
+  background: var(--m-page);
+  color: var(--m-ink);
+  font-family: var(--font-body);
+}
+
+a {
+  color: var(--m-ink);
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  margin: 0;
+}
+
+::selection {
+  background: var(--m-ink);
+  color: var(--m-page);
+}
+
+:focus-visible {
+  outline: 2px solid var(--m-ink);
+  outline-offset: 2px;
+}
+
+/* Brand-coloured logos get toned down on the light theme. */
+:root[data-theme="light"] [data-brand] {
+  filter: brightness(0.8) saturate(1.1);
+}
+
+/* Whole-page cross-fade while the theme switches (class toggled by useTheme). */
+:root.theming,
+:root.theming * {
+  transition:
+    background-color 0.45s ease,
+    border-color 0.45s ease,
+    color 0.45s ease,
+    fill 0.45s ease !important;
+}
+
+/* Keyframes used from CSS Modules live in that module (Hero.module.css): modules rename animation names. */
+@keyframes mn-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes mn-rise {
+  from {
+    transform: translateY(14px);
+  }
+  to {
+    transform: none;
+  }
+}
+
+/*
+ * Scroll reveals. useReveal() flips data-reveal / data-chip from "" to "hidden"
+ * (before paint) and then to "shown" once the element enters the viewport.
+ * Nothing is hidden when JS is off or when reduced motion is requested.
+ */
+[data-reveal="hidden"] {
+  opacity: 0;
+  transform: translateY(14px);
+}
+
+[data-reveal="shown"] {
+  animation:
+    mn-fade 0.7s ease var(--reveal-delay, 0s) backwards,
+    mn-rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) var(--reveal-delay, 0s) backwards;
+}
+
+/* The chip's own transition (see Stack.module.css) does the fade-in. */
+[data-chip="hidden"] {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+/* Only reveal/stagger are disabled: the pulsing dot keeps running. */
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal],
+  [data-chip] {
+    animation: none !important;
+  }
+}

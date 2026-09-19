@@ -1,0 +1,19 @@
+.panel {
+  background: var(--m-panel);
+  border: 1px solid var(--m-line);
+  border-radius: 14px;
+}
+
+.inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: var(--pad, clamp(40px, 7vw, 76px) 20px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap);
+}
+
+.center {
+  text-align: center;
+}

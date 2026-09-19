@@ -1,0 +1,19 @@
+.title {
+  font-size: clamp(24px, 4.6vw, 38px);
+  line-height: 1.12;
+  max-width: 20ch;
+  text-wrap: balance;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.copy {
+  margin: 10px 0 0;
+  font-size: 12px;
+  color: var(--m-muted5);
+}

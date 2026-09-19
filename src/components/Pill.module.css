@@ -1,0 +1,100 @@
+.icon {
+  line-height: 1;
+  flex: none;
+}
+
+/* Link buttons (primary / outline) */
+.primary,
+.outline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  border-radius: 999px;
+}
+
+.lg {
+  padding: 13px 22px;
+}
+
+.md {
+  padding: 12px 20px;
+}
+
+.primary {
+  background: var(--m-ink);
+  color: var(--m-page);
+}
+
+.primary:hover {
+  background: var(--m-ink-strong);
+  color: var(--m-page);
+}
+
+.outline {
+  border: 1px solid var(--m-line4);
+  color: var(--m-text);
+}
+
+.outline:hover {
+  border-color: var(--m-line8);
+  background: var(--m-raise);
+}
+
+/* Plain label */
+.tag {
+  font-size: 12px;
+  padding: 7px 13px;
+  border: 1px solid var(--m-line3);
+  border-radius: 999px;
+  color: var(--m-text4);
+}
+
+/* Tech stack pill */
+.chip {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 14px;
+  border: 1px solid var(--m-line2);
+  border-radius: 999px;
+  background: var(--m-card);
+  font-size: 14px;
+  color: var(--m-text3);
+  white-space: nowrap;
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.4s cubic-bezier(0.22, 0.7, 0.2, 1),
+    opacity 0.4s ease;
+}
+
+.chip:hover {
+  border-color: var(--m-line7);
+  background: var(--m-raise2);
+  color: var(--m-ink-strong);
+  transform: translateY(-2px);
+}
+
+.chip .icon {
+  font-size: 16px;
+}
+
+/* Tech pill inside a project card */
+.tech {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 12px;
+  border: 1px solid var(--m-line3);
+  border-radius: 999px;
+  background: var(--m-raise2);
+  font-size: 13px;
+  color: var(--m-text3);
+  white-space: nowrap;
+}
+
+.tech .icon {
+  font-size: 15px;
+}

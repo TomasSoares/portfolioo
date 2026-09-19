@@ -1,0 +1,63 @@
+.list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Optional 16:9 screenshot. */
+.media {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--m-line2);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: saturate(0.82) contrast(1.02);
+  transition: filter 0.3s ease;
+}
+
+.card:hover .media img {
+  filter: saturate(1);
+}
+
+.name {
+  font-size: clamp(18px, 2.2vw, 22px);
+  line-height: 1.2;
+}
+
+.blurb {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--m-muted);
+  max-width: 50ch;
+  text-wrap: pretty;
+}
+
+.stack {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 7px;
+  margin-top: 4px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  color: var(--m-muted2);
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  color: var(--m-ink);
+}

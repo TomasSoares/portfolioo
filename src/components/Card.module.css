@@ -1,0 +1,19 @@
+.card {
+  border: 1px solid var(--m-line);
+  border-radius: 12px;
+  background: var(--m-card);
+  padding: clamp(18px, 3vw, 26px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 9px;
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+.card:hover {
+  border-color: var(--m-line5);
+  background: var(--m-raise2);
+}
