@@ -69,7 +69,8 @@ const tech = {
   electron: { name: 'Electron', icon: 'devicon-electron-original', hex: '#4a9dd6' },
   nodejs: { name: 'Node.js', icon: 'devicon-nodejs-plain', hex: '#5fa04e' },
   markdown: { name: 'Markdown', icon: 'devicon-markdown-original', hex: '#c9c9c9' },
-  nginx: { name: 'Nginx', icon: 'devicon-nginx-original', hex: '#009639' },
+  // Devicon's Nginx glyph is the full wordmark, unreadable at pill size.
+  nginx: { name: 'Nginx', icon: 'ph ph-hard-drives', hex: '#009639' },
   githubActions: { name: 'GitHub Actions', icon: 'devicon-githubactions-plain', hex: '#2088ff' },
 } satisfies Record<string, TechItem>
 
@@ -128,11 +129,11 @@ export const stackGroups: StackGroup[] = [
   },
   {
     label: 'Server & data',
-    items: [tech.laravel, tech.rest, tech.sql, tech.sqlServer],
+    items: [tech.laravel, tech.rest, tech.sql, tech.sqlServer, tech.nginx],
   },
   {
     label: 'Workflow',
-    items: [tech.git, tech.jira],
+    items: [tech.git, tech.githubActions, tech.markdown, tech.jira],
   },
 ]
 
