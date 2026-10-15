@@ -27,8 +27,17 @@ export default function Projects() {
               ))}
             </div>
             <a className={styles.link} href={project.href}>
-              <i className="ph ph-github-logo" aria-hidden="true" />
-              View on GitHub
+              {project.linkKind === 'site' ? (
+                <>
+                  <i className="ph ph-arrow-up-right" aria-hidden="true" />
+                  Visit site
+                </>
+              ) : (
+                <>
+                  <i className="ph ph-github-logo" aria-hidden="true" />
+                  View on GitHub
+                </>
+              )}
             </a>
           </Card>
         ))}

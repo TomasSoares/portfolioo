@@ -18,6 +18,8 @@ export interface Project {
   name: string
   blurb: string
   href: string
+  /** Where `href` points: the GitHub repo (default) or a live site. */
+  linkKind?: 'github' | 'site'
   stack: TechItem[]
   /** Optional 16:9 screenshot, imported from src/assets/. */
   image?: string
@@ -66,6 +68,9 @@ const tech = {
   jira: { name: 'Jira', icon: 'devicon-jira-plain', hex: '#2684ff' },
   electron: { name: 'Electron', icon: 'devicon-electron-original', hex: '#4a9dd6' },
   nodejs: { name: 'Node.js', icon: 'devicon-nodejs-plain', hex: '#5fa04e' },
+  markdown: { name: 'Markdown', icon: 'devicon-markdown-original', hex: '#c9c9c9' },
+  nginx: { name: 'Nginx', icon: 'devicon-nginx-original', hex: '#009639' },
+  githubActions: { name: 'GitHub Actions', icon: 'devicon-githubactions-plain', hex: '#2088ff' },
 } satisfies Record<string, TechItem>
 
 export const roles: Role[] = [
@@ -140,11 +145,12 @@ export const projects: Project[] = [
     stack: [tech.nextjs, tech.typescript, tech.react, tech.sql],
   },
   {
-    name: 'Notly',
+    name: 'usefuldocs',
     blurb:
-      'A minimalist note-taking desktop app built with Electron, with distraction-free writing, automatic saving and note organisation, packaged for Windows, macOS and Linux.',
-    href: 'https://github.com/TomasSoares/notly-app',
-    stack: [tech.electron, tech.javascript, tech.nodejs],
+      'Short, step-by-step guides in English and Portuguese, written in my Obsidian vault and built with MkDocs. Every push publishes them automatically to my own VPS through a GitHub Action.',
+    href: 'https://docs.tomassoares.dev',
+    linkKind: 'site',
+    stack: [tech.python, tech.markdown, tech.nginx, tech.githubActions],
   },
   {
     name: 'This portfolio',
