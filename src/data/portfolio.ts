@@ -131,11 +131,11 @@ export const stackGroups: StackGroup[] = [
   },
   {
     label: 'Server & data',
-    items: [tech.laravel, tech.rest, tech.sql, tech.sqlServer, tech.nginx],
+    items: [tech.laravel, tech.rest, tech.sql, tech.sqlServer, tech.nginx, tech.vercel],
   },
   {
     label: 'Workflow',
-    items: [tech.git, tech.githubActions, tech.markdown, tech.jira],
+    items: [tech.git, tech.githubActions, tech.vite, tech.markdown, tech.jira],
   },
 ]
 
