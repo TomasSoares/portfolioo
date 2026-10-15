@@ -54,14 +54,24 @@
   align-items: center;
   gap: 8px;
   color: var(--fg);
+}
+
+/* Only the words are underlined, not the icon. */
+.label {
   text-decoration: underline;
   text-decoration-color: var(--rule-strong);
   text-underline-offset: 4px;
 }
 
-.link:hover,
-.more:hover {
+.link:hover .label,
+.more:hover .label {
   text-decoration-color: var(--fg);
+}
+
+/* Bricolage sits high in its line box, so the icon is lifted to the letters' optical centre. */
+.icon {
+  font-size: 1.1em;
+  transform: translateY(-0.08em);
 }
 
 .blurb {

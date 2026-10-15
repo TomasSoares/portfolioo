@@ -19,13 +19,13 @@ export default function Projects() {
               <a className={styles.link} href={project.href}>
                 {project.linkKind === 'site' ? (
                   <>
-                    <i className="ph ph-globe-simple" aria-hidden="true" />
-                    Visit site
+                    <i className={`ph ph-globe-simple ${styles.icon}`} aria-hidden="true" />
+                    <span className={styles.label}>Visit site</span>
                   </>
                 ) : (
                   <>
-                    <i className="ph ph-github-logo" aria-hidden="true" />
-                    View on GitHub
+                    <i className={`ph ph-github-logo ${styles.icon}`} aria-hidden="true" />
+                    <span className={styles.label}>View on GitHub</span>
                   </>
                 )}
               </a>
@@ -42,8 +42,8 @@ export default function Projects() {
         ))}
       </ul>
       <a className={styles.more} href={links.github}>
-        <i className="ph ph-github-logo" aria-hidden="true" />
-        See everything on GitHub
+        <i className={`ph ph-github-logo ${styles.icon}`} aria-hidden="true" />
+        <span className={styles.label}>See everything on GitHub</span>
       </a>
     </Section>
   )
