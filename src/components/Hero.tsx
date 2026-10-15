@@ -34,7 +34,7 @@ export default function Hero() {
         )}
       </h1>
       <p className={styles.lead} data-reveal="">
-        FrontEnd Developer in Leiria, Portugal. Currently a Web Developer Trainee at Innovation
+        Front-end focused developer in Leiria, Portugal. Currently a Web Developer Trainee at Innovation
         Makers, working remotely, with a Computer Science degree behind me.
       </p>
       <div className={styles.actions} data-reveal="">

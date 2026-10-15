@@ -1,6 +1,6 @@
 # Tomás Soares — Portfolio
 
-Personal portfolio of Tomás Soares, FrontEnd Developer based in Leiria, Portugal. A single-page site with a monochrome design, a dark theme by default and a light theme toggle.
+Personal portfolio of Tomás Soares, a front-end focused web developer based in Leiria, Portugal. Live at [tomassoares.dev](https://tomassoares.dev). A single-page site with a monochrome design, a dark theme by default and a light theme toggle.
 
 Sections: hero, About, Experience, Tech stack, Projects and a contact footer.
 

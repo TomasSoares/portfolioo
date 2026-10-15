@@ -72,6 +72,8 @@ const tech = {
   // Devicon's Nginx glyph is the full wordmark, unreadable at pill size.
   nginx: { name: 'Nginx', icon: 'ph ph-hard-drives', hex: '#009639' },
   githubActions: { name: 'GitHub Actions', icon: 'devicon-githubactions-plain', hex: '#2088ff' },
+  vite: { name: 'Vite', icon: 'devicon-vitejs-plain', hex: '#9f7aea' },
+  vercel: { name: 'Vercel', icon: 'devicon-vercel-original', hex: '#c9c9c9' },
 } satisfies Record<string, TechItem>
 
 export const roles: Role[] = [
@@ -156,8 +158,8 @@ export const projects: Project[] = [
   {
     name: 'This portfolio',
     blurb:
-      "The site you're reading, being rebuilt in React, my own playground for layout, motion and the details I care about.",
+      "The site you're reading: a single-page React and TypeScript build with dark and light themes, scroll reveals and no UI libraries, deployed on Vercel. My own playground for layout, motion and the details I care about.",
     href: 'https://github.com/TomasSoares/portfolioo',
-    stack: [tech.react, tech.javascript, tech.css],
+    stack: [tech.react, tech.typescript, tech.vite, tech.css, tech.vercel],
   },
 ]
