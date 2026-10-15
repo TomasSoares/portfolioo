@@ -1,0 +1,35 @@
+.section {
+  display: grid;
+  grid-template-columns: var(--label-col) minmax(0, 1fr);
+  column-gap: clamp(24px, 4vw, 48px);
+  padding: clamp(48px, 8vw, 96px) 0;
+  border-top: 1px solid var(--rule);
+  /* Keeps the section top clear of the sticky navbar when reached via #anchor. */
+  scroll-margin-top: 72px;
+}
+
+/* The title stays beside its content while the section scrolls past. */
+.title {
+  position: sticky;
+  top: 88px;
+  align-self: start;
+  font-size: var(--text-base);
+  font-weight: 600;
+  line-height: 1.6;
+  color: var(--fg-3);
+}
+
+.body {
+  min-width: 0;
+}
+
+@media (max-width: 760px) {
+  .section {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 20px;
+  }
+
+  .title {
+    position: static;
+  }
+}

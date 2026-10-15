@@ -1,8 +1,5 @@
-.app {
-  background: var(--m-page);
-  min-height: 100vh;
-  padding: 8px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+.page {
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
 }

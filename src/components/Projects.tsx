@@ -1,50 +1,50 @@
 import { links, projects } from '../data/portfolio'
-import Card from './Card'
-import Panel from './Panel'
-import Pill from './Pill'
-import SectionHeader from './SectionHeader'
+import Section from './Section'
+import TechMark from './TechMark'
 import styles from './Projects.module.css'
 
 export default function Projects() {
   return (
-    <Panel id="projects" gap={26}>
-      <SectionHeader kicker="Projects" title="Things I've built." />
-      <div className={styles.list}>
+    <Section id="projects" title="Projects">
+      <ul className={styles.list}>
         {projects.map((project) => (
-          <Card key={project.name} className={styles.card} data-reveal="">
+          <li key={project.name} className={styles.project}>
             {project.image && (
               <div className={styles.media}>
-                <img src={project.image} alt={project.name} />
+                <img src={project.image} alt={`Screenshot of ${project.name}`} />
               </div>
             )}
-            <h3 className={styles.name}>{project.name}</h3>
-            <p className={styles.blurb}>{project.blurb}</p>
-            <div className={styles.stack}>
-              {project.stack.map((tech) => (
-                <Pill key={tech.name} variant="tech" icon={tech.icon} brand={tech.hex}>
-                  {tech.name}
-                </Pill>
-              ))}
+            <div className={styles.head}>
+              <h3 className={styles.name}>{project.name}</h3>
+              <a className={styles.link} href={project.href}>
+                {project.linkKind === 'site' ? (
+                  <>
+                    <i className="ph ph-globe-simple" aria-hidden="true" />
+                    Visit site
+                  </>
+                ) : (
+                  <>
+                    <i className="ph ph-github-logo" aria-hidden="true" />
+                    View on GitHub
+                  </>
+                )}
+              </a>
             </div>
-            <a className={styles.link} href={project.href}>
-              {project.linkKind === 'site' ? (
-                <>
-                  <i className="ph ph-arrow-up-right" aria-hidden="true" />
-                  Visit site
-                </>
-              ) : (
-                <>
-                  <i className="ph ph-github-logo" aria-hidden="true" />
-                  View on GitHub
-                </>
-              )}
-            </a>
-          </Card>
+            <p className={styles.blurb}>{project.blurb}</p>
+            <ul className={styles.stack} aria-label="Built with">
+              {project.stack.map((tech) => (
+                <li key={tech.name}>
+                  <TechMark item={tech} small />
+                </li>
+              ))}
+            </ul>
+          </li>
         ))}
-      </div>
-      <Pill variant="outline" href={links.github} icon="ph ph-github-logo">
+      </ul>
+      <a className={styles.more} href={links.github}>
+        <i className="ph ph-github-logo" aria-hidden="true" />
         See everything on GitHub
-      </Pill>
-    </Panel>
+      </a>
+    </Section>
   )
 }

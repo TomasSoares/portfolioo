@@ -1,0 +1,18 @@
+.mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  color: var(--fg);
+}
+
+.icon {
+  font-size: 1.15em;
+  line-height: 1;
+}
+
+.small {
+  font-size: var(--text-sm);
+  color: var(--fg-2);
+  gap: 6px;
+}

@@ -1,17 +1,28 @@
 .list {
-  width: 100%;
+  list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+}
+
+.project {
+  padding: clamp(28px, 4vw, 40px) 0;
+  border-bottom: 1px solid var(--rule);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.project:first-child {
+  padding-top: 0;
 }
 
 /* Optional 16:9 screenshot. */
 .media {
-  width: 100%;
   aspect-ratio: 16 / 9;
-  border: 1px solid var(--m-line2);
-  border-radius: 10px;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
   overflow: hidden;
+  margin-bottom: 8px;
 }
 
 .media img {
@@ -19,45 +30,53 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  filter: saturate(0.82) contrast(1.02);
-  transition: filter 0.3s ease;
 }
 
-.card:hover .media img {
-  filter: saturate(1);
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 24px;
 }
 
 .name {
-  font-size: clamp(18px, 2.2vw, 22px);
-  line-height: 1.2;
+  font-size: var(--text-xl);
+  font-weight: 700;
+  font-stretch: 85%;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.link,
+.more {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--fg);
+  text-decoration: underline;
+  text-decoration-color: var(--rule-strong);
+  text-underline-offset: 4px;
+}
+
+.link:hover,
+.more:hover {
+  text-decoration-color: var(--fg);
 }
 
 .blurb {
-  margin: 0;
-  font-size: 15px;
-  line-height: 1.7;
-  color: var(--m-muted);
-  max-width: 50ch;
+  color: var(--fg-2);
+  max-width: var(--measure);
   text-wrap: pretty;
 }
 
 .stack {
+  list-style: none;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 7px;
-  margin-top: 4px;
+  gap: 6px 20px;
 }
 
-.link {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  font-size: 13px;
-  color: var(--m-muted2);
-  transition: color 0.2s ease;
-}
-
-.link:hover {
-  color: var(--m-ink);
+.more {
+  margin-top: 28px;
 }

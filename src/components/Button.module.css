@@ -1,0 +1,35 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 46px;
+  padding: 0 20px;
+  border: 1px solid var(--fg);
+  border-radius: 4px;
+  font-size: var(--text-base);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.icon {
+  font-size: 1.1em;
+}
+
+.primary {
+  background: var(--fg);
+  color: var(--bg);
+}
+
+.primary:hover {
+  background: transparent;
+  color: var(--fg);
+}
+
+.outline {
+  border-color: var(--rule-strong);
+  color: var(--fg);
+}
+
+.outline:hover {
+  border-color: var(--fg);
+}

@@ -1,25 +1,27 @@
 import { stackGroups } from '../data/portfolio'
-import Panel from './Panel'
-import Pill from './Pill'
-import SectionHeader from './SectionHeader'
+import Section from './Section'
+import TechMark from './TechMark'
 import styles from './Stack.module.css'
 
 export default function Stack() {
   return (
-    <Panel id="stack" maxWidth={820} gap={30}>
-      <SectionHeader kicker="Tech stack" title="The day-to-day toolkit." />
-      {stackGroups.map((group) => (
-        <div key={group.label} className={styles.group} data-reveal="">
-          <span className={styles.label}>{group.label}</span>
-          <div className={styles.row}>
-            {group.items.map((item) => (
-              <Pill key={item.name} variant="chip" icon={item.icon} brand={item.hex}>
-                {item.name}
-              </Pill>
-            ))}
+    <Section id="stack" title="Stack">
+      <dl className={styles.groups}>
+        {stackGroups.map((group) => (
+          <div key={group.label} className={styles.group}>
+            <dt className={styles.label}>{group.label}</dt>
+            <dd>
+              <ul className={styles.items}>
+                {group.items.map((item) => (
+                  <li key={item.name}>
+                    <TechMark item={item} />
+                  </li>
+                ))}
+              </ul>
+            </dd>
           </div>
-        </div>
-      ))}
-    </Panel>
+        ))}
+      </dl>
+    </Section>
   )
 }

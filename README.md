@@ -1,22 +1,28 @@
 # Tomás Soares — Portfolio
 
-Personal portfolio of Tomás Soares, a front-end focused web developer based in Leiria, Portugal. Live at [tomassoares.dev](https://tomassoares.dev). A single-page site with a monochrome design, a dark theme by default and a light theme toggle.
+Personal portfolio of Tomás Soares, a front-end focused web developer based in Leiria, Portugal. Live at [tomassoares.dev](https://tomassoares.dev). A single-page site, strictly black and white, with a dark theme by default and a light theme toggle.
 
-Sections: hero, About, Experience, Tech stack, Projects and a contact footer.
+Sections: hero, About, Experience, Stack, Projects and a contact footer.
 
 ## Stack
 
-- [React](https://react.dev) 19 + TypeScript, built with [Vite](https://vite.dev)
+- [React](https://react.dev) 19 + TypeScript, built with [Vite](https://vite.dev), deployed on [Vercel](https://vercel.com)
 - CSS Modules and CSS custom properties, no UI or animation libraries
-- [Geist](https://vercel.com/font) (Google Fonts), [Phosphor Icons](https://phosphoricons.com) and [Devicon](https://devicon.dev), loaded from CDNs
+- [Bricolage Grotesque](https://fonts.google.com/specimen/Bricolage+Grotesque) (Google Fonts), [Phosphor Icons](https://phosphoricons.com) and [Devicon](https://devicon.dev), loaded from CDNs
+
+## Design
+
+- One typeface for everything. Bricolage Grotesque's optical-size and width axes make it a condensed display face for the name in the hero and a calm text face everywhere else.
+- Black and white only. The brand-coloured technology logos are the only colour on the page.
+- Left-aligned layout: each section has its title in a narrow left column (sticky while the section scrolls) and its content on the right. On narrow screens the title moves above the content.
+- One moment of motion: the name types itself in on load. Everything else is still. Under `prefers-reduced-motion` the name appears at once.
+- Experience is a timeline with the period in its own column; Stack and Projects are lists separated by rules, not cards.
 
 ## Features
 
 - Dark and light themes, saved in `localStorage` and applied before first paint to avoid a flash
-- Typewriter headline, scroll reveals and a staggered entrance for the tech stack pills
-- Sticky navbar that shrinks on scroll, with animated anchor scrolling and an active-section indicator
-- Respects `prefers-reduced-motion`: reveals and typing are skipped, so all content is visible straight away
-- No media queries: layout is centred and fluid (`clamp()` sizes, wrapping flex rows)
+- Sticky navbar with animated anchor scrolling and an active-section indicator
+- Responsive down to phone width, visible keyboard focus, AA contrast in both themes
 
 ## Getting started
 
@@ -35,16 +41,16 @@ npm run lint     # run ESLint
 ```
 public/assets/cv/   CV PDF, served at /assets/cv/TomasSoaresEN.pdf
 src/
-  components/       one component per section, plus shared Panel, Card, Pill, IconButton…
+  components/       one component per section, plus shared Section, Button, TechMark, IconButton
                     (each with its own .module.css)
-  hooks/            useTheme, useReveal, useActiveSection, useSmoothScroll, useTypewriter, useScrolled
+  hooks/            useTheme, useActiveSection, useSmoothScroll, useTypewriter
   data/portfolio.ts roles, projects, tech stack groups and contact links
   styles/theme.css  design tokens for the dark and light themes
-  styles/global.css reset, base styles and shared animations
+  styles/global.css reset and base styles
 ```
 
 To update the content, edit `src/data/portfolio.ts` (experience, projects, tech stack, links). Section headings and paragraphs live in the components themselves.
 
 ## Design tokens
 
-Colours are defined once in [`src/styles/theme.css`](src/styles/theme.css) as `--m-*` custom properties, with the light theme overriding them under `:root[data-theme="light"]`. Components only reference these variables. The brand-coloured technology logos are the only colour on the page.
+Colours, type sizes and layout widths are defined once in [`src/styles/theme.css`](src/styles/theme.css) as custom properties (`--bg`, `--fg`, `--fg-2`, `--fg-3`, `--rule`, `--text-*`), with the light theme overriding the colours under `:root[data-theme="light"]`. Components only reference these variables.

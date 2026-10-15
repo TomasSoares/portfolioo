@@ -1,78 +1,69 @@
 .nav {
   position: sticky;
-  top: 8px;
+  top: 0;
   z-index: 40;
-  width: 100%;
-  max-width: 100%;
-  margin: 0 auto;
-  background: color-mix(in srgb, var(--m-panel) 92%, transparent);
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
   backdrop-filter: blur(12px);
-  border: 1px solid var(--m-line);
-  border-radius: 14px;
-  transition:
-    max-width 0.55s cubic-bezier(0.22, 0.7, 0.2, 1),
-    border-color 0.35s ease;
+  border-bottom: 1px solid var(--rule);
 }
 
 .inner {
-  max-width: 960px;
+  max-width: var(--page-max);
   margin: 0 auto;
-  padding: 12px 16px;
+  padding: 14px var(--gutter);
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  transition: padding 0.45s cubic-bezier(0.22, 0.7, 0.2, 1);
-}
-
-/* Shrunk state once the page has scrolled past 60px. */
-.compact {
-  max-width: min(680px, 100%);
-  border-color: var(--m-line4);
-}
-
-.compact .inner {
-  padding: 8px 14px;
+  gap: 16px 32px;
+  flex-wrap: wrap;
 }
 
 .name {
-  font-size: 13px;
-  color: var(--m-text3);
-  letter-spacing: -0.01em;
+  font-weight: 600;
+  font-size: var(--text-base);
   flex: none;
-  cursor: pointer;
-  transition: color 0.2s ease;
-}
-
-.name:hover {
-  color: var(--m-ink);
 }
 
 .links {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 18px;
-  font-size: 13px;
+  gap: 4px 24px;
+  font-size: var(--text-base);
   flex: 1;
   min-width: 0;
 }
 
 .link {
-  color: var(--m-muted2);
-  transition: color 0.25s ease;
+  color: var(--fg-3);
 }
 
 .link:hover,
 .active {
-  color: var(--m-ink);
+  color: var(--fg);
 }
 
 .actions {
   display: flex;
   align-items: center;
-  gap: 8px;
-  flex: none;
+  gap: 4px;
+  margin-left: auto;
+}
+
+/* On phones the section links move onto their own row under the name and icons. */
+@media (max-width: 640px) {
+  .inner {
+    padding-block: 10px;
+    column-gap: 12px;
+    row-gap: 6px;
+  }
+
+  .actions {
+    gap: 0;
+  }
+
+  .links {
+    order: 3;
+    flex-basis: 100%;
+    gap: 4px 18px;
+    font-size: var(--text-sm);
+  }
 }

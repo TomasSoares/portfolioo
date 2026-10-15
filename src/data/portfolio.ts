@@ -79,15 +79,15 @@ const tech = {
 export const roles: Role[] = [
   {
     period: 'Jan 2026 to present',
-    kind: 'Full-time · Remote',
+    kind: 'Full-time, remote',
     title: 'Web Developer Trainee',
-    company: 'Innovation Makers · Lisbon, Portugal',
+    company: 'Innovation Makers, Lisbon, Portugal',
     summary:
       'Building and maintaining web features day to day, front end through to the REST APIs behind them, remotely, on a shared codebase.',
   },
   {
     period: 'May to Jul 2022',
-    kind: 'Internship · Barcelona',
+    kind: 'Erasmus internship, Barcelona',
     title: 'Intern',
     company: 'Advanced Nanotechnologies',
     summary:
@@ -95,16 +95,16 @@ export const roles: Role[] = [
   },
   {
     period: 'Apr to May 2022',
-    kind: 'Internship · Hybrid',
+    kind: 'Internship, hybrid',
     title: 'Intern',
-    company: 'MA Servicos · Pombal, Leiria',
+    company: 'MA Servicos, Pombal, Leiria',
     summary: 'Developed a website for the company in HTML and CSS.',
   },
   {
     period: 'Jun to Jul 2021',
-    kind: 'Internship · On-site',
+    kind: 'Internship, on-site',
     title: 'Intern',
-    company: 'Comsoftweb · Pombal, Leiria',
+    company: 'Comsoftweb, Pombal, Leiria',
     summary:
       'Worked with SQL and databases, including Microsoft SQL Server, and picked up the Eticadata business management software.',
   },
@@ -158,7 +158,7 @@ export const projects: Project[] = [
   {
     name: 'This portfolio',
     blurb:
-      "The site you're reading: a single-page React and TypeScript build with dark and light themes, scroll reveals and no UI libraries, deployed on Vercel. My own playground for layout, motion and the details I care about.",
+      "The site you're reading: a single-page React and TypeScript build with dark and light themes and no UI libraries, deployed on Vercel. My own playground for layout, motion and the details I care about.",
     href: 'https://github.com/TomasSoares/portfolioo',
     stack: [tech.react, tech.typescript, tech.vite, tech.css, tech.vercel],
   },

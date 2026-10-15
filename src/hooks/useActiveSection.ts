@@ -1,10 +1,10 @@
 import { useEffect, useState, type RefObject } from 'react'
 
 // The active section is the one crossing a line this far below the navbar.
-const LINE_OFFSET = 40
+const LINE_OFFSET = 160
 
 /**
- * Returns the id of the section crossing the line `navBottom + 40px`; if none does and the
+ * Returns the id of the section crossing the line `navBottom + 160px`; if none does and the
  * page is scrolled to the bottom, the last section wins. Empty string when nothing is active.
  */
 export function useActiveSection(ids: readonly string[], navRef: RefObject<HTMLElement | null>) {

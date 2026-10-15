@@ -9,9 +9,9 @@ interface IconButtonProps {
   onClick?: () => void
 }
 
-/** 32×32 circular icon button used in the navbar. */
+/** 36×36 icon-only button used in the navbar. */
 export default function IconButton({ icon, label, href, onClick }: IconButtonProps) {
-  const glyph = <i className={icon} aria-hidden="true" style={{ fontSize: 15 }} />
+  const glyph = <i className={icon} aria-hidden="true" style={{ fontSize: 19 }} />
 
   if (href) {
     return (

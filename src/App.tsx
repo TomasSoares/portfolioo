@@ -5,21 +5,20 @@ import Hero from './components/Hero'
 import Navbar from './components/Navbar'
 import Projects from './components/Projects'
 import Stack from './components/Stack'
-import { useReveal } from './hooks/useReveal'
 import styles from './App.module.css'
 
 export default function App() {
-  useReveal()
-
   return (
-    <div className={styles.app}>
+    <>
       <Navbar />
-      <Hero />
-      <About />
-      <Experience />
-      <Stack />
-      <Projects />
+      <main className={styles.page}>
+        <Hero />
+        <About />
+        <Experience />
+        <Stack />
+        <Projects />
+      </main>
       <Footer />
-    </div>
+    </>
   )
 }

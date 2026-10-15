@@ -2,49 +2,56 @@ import avatar from '../assets/avatar.jpeg'
 import { links } from '../data/portfolio'
 import { useTypewriter } from '../hooks/useTypewriter'
 import { prefersReducedMotion } from '../utils/motion'
-import Panel from './Panel'
-import Pill from './Pill'
+import Button from './Button'
 import styles from './Hero.module.css'
 
-const HEADLINE = 'Building interfaces for the web, front to back.'
+const FIRST = 'Tomás'
+const LAST = 'Soares'
+const NAME = `${FIRST} ${LAST}`
 
 export default function Hero() {
-  const { typed, caret } = useTypewriter(HEADLINE, !prefersReducedMotion())
+  const { typed, caret } = useTypewriter(NAME, !prefersReducedMotion())
+  const typedFirst = typed.slice(0, FIRST.length)
+  const typedLast = typed.slice(FIRST.length + 1)
 
   return (
-    <Panel
-      id="top"
-      padding="clamp(44px, 9vw, 92px) 20px clamp(36px, 6vw, 64px)"
-      gap={22}
-      centerText
-    >
-      <div className={styles.avatarWrap} data-reveal="">
-        <img className={styles.avatar} src={avatar} alt="Tomás Soares" width={76} height={76} />
-        <span className={styles.namePill}>
-          <span className={styles.dot} />
-          Tomás Soares
+    <section id="top" className={styles.hero} aria-label="Introduction">
+      {/*
+       * The full name is laid out invisibly underneath so the typed copy on top never
+       * shifts the page while it grows. Screen readers get the name once, from aria-label.
+       */}
+      <h1 className={styles.name} aria-label={NAME}>
+        <span className={styles.ghost} aria-hidden="true">
+          {FIRST}
+          <br />
+          {LAST}
         </span>
-      </div>
-      <h1 className={styles.title} data-reveal="" aria-label={HEADLINE}>
-        <span aria-hidden="true">{typed}</span>
-        {caret && (
-          <span className={styles.caret} aria-hidden="true">
-            |
-          </span>
-        )}
+        <span className={styles.typed} aria-hidden="true">
+          {typedFirst}
+          {typed.length > FIRST.length && <br />}
+          {typedLast}
+          {caret && <span className={styles.caret}>_</span>}
+        </span>
       </h1>
-      <p className={styles.lead} data-reveal="">
-        Front-end focused developer in Leiria, Portugal. Currently a Web Developer Trainee at Innovation
-        Makers, working remotely, with a Computer Science degree behind me.
-      </p>
-      <div className={styles.actions} data-reveal="">
-        <Pill variant="primary" size="lg" href={links.email} icon="ph ph-envelope-simple">
-          Email me
-        </Pill>
-        <Pill variant="outline" size="lg" href={links.cv} icon="ph ph-arrow-down">
-          Download CV
-        </Pill>
+
+      <div className={styles.intro}>
+        <img className={styles.avatar} src={avatar} alt="" width={64} height={64} />
+        <div className={styles.text}>
+          <p className={styles.lead}>Building interfaces for the web, front to back.</p>
+          <p className={styles.sub}>
+            Front-end focused developer in Leiria, Portugal. Currently a Web Developer Trainee at
+            Innovation Makers, working remotely, with a Computer Science degree behind me.
+          </p>
+          <div className={styles.actions}>
+            <Button variant="primary" href={links.email} icon="ph ph-envelope-simple">
+              Email me
+            </Button>
+            <Button variant="outline" href={links.cv} icon="ph ph-file-arrow-down">
+              Download CV
+            </Button>
+          </div>
+        </div>
       </div>
-    </Panel>
+    </section>
   )
 }
